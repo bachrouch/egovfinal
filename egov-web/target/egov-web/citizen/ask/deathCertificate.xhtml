@@ -1,0 +1,157 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:pp="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+
+	<ui:define name="title">Ask Death Certificate</ui:define>
+	<ui:define name="pageContent">
+
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+
+
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-search-results -->
+
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li><a href="#{request.contextPath}/citizen/dashboard.jsf">
+							<i class="icon-dashboard"></i> Dashboard
+					</a></li>
+					<li><a href="#{request.contextPath}/citizen/ask.jsf"> <i
+							class="icon-edit"></i> Ask for service
+					</a></li>
+
+					<li><a href="#{request.contextPath}/citizen/asked.jsf"> <i
+							class="icon-table"></i> Your asked services
+					</a></li>
+
+
+
+
+					<li><a href="#{request.contextPath}/citizen/invoice.jsf">
+							<i class="icon-angle-right"></i> Invoice
+					</a></li>
+					<li><a href="#{request.contextPath}/citizen/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+				<!-- /Navigation -->
+
+
+
+
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+
+		<div id="content">
+			<div class="container">
+
+
+				<!--=== Inline Tabs ===-->
+				<div class="row">
+					<div class="col-md-8">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i> Ask For Death Certificate</h4>
+							</div>
+							<div class="widget-content">
+								<h:form class="form-horizontal row-border">
+									<div class="alert alert-info fade in">
+										<i class="icon-remove close" data-dismiss="alert"></i> This
+										are examples of full width input fields. Please find
+										select-boxes and other things below.
+									</div>
+									<div class="form-group">
+										<label class="col-md-4 control-label">First name:</label>
+										<div class="col-md-5">
+										<h:inputText value="#{gestionMunicipalityBean.fname}" name="regular" class="form-control"/>
+										
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-4 control-label">Last name:</label>
+										<div class="col-md-5"><h:inputText value="#{gestionMunicipalityBean.lname}" name="regular" class="form-control"/></div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-md-4 control-label">Death date:</label>
+										<div class="col-md-6">
+										<pp:calendar value="#{gestionMunicipalityBean.deathDate}" mode="popup" showOn="button" popupIconOnly="true" />
+										<span class="help-block">01/01/1999</span></div>
+									</div>
+									
+									
+									<div class="form-actions">
+										<h:commandButton action="#{gestionMunicipalityBean.addaskDeath()}" value="submit" class="btn btn-primary pull-right"/>
+										
+									</div>
+								</h:form>
+							</div>
+						
+						</div>
+					
+					
+					</div>
+				</div>
+				<!-- /.row -->
+				<!-- /Page Content -->
+			</div>
+			<!-- /.container -->
+
+		</div>
+
+	</ui:define>
+</ui:composition>

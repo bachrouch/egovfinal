@@ -1,0 +1,222 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml">
+
+	<ui:define name="title">Ask for service</ui:define>
+	<ui:define name="pageContent">
+
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+
+
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-search-results -->
+
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li><a href="#{request.contextPath}/citizen/dashboard.jsf">
+							<i class="icon-dashboard"></i> Dashboard
+					</a></li>
+					<li><a href="#{request.contextPath}/citizen/ask.jsf"> <i
+							class="icon-edit"></i> Ask for service
+					</a></li>
+
+					<li><a href="#{request.contextPath}/citizen/asked.jsf"> <i
+							class="icon-table"></i> Your asked services
+					</a></li>
+
+
+
+
+					<li><a href="#{request.contextPath}/citizen/invoice.jsf">
+							<i class="icon-angle-right"></i> Invoice
+					</a></li>
+					<li><a href="#{request.contextPath}/citizen/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+				<!-- /Navigation -->
+
+
+
+
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+		<div>.</div>
+		<div id="content" align="center">
+
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="municipality.jpg"
+							class="img-thumbnail" />
+						<div class="caption">
+							<h3>Municipality services</h3>
+							<p>...</p>
+							<h:form>
+								<h:commandButton action="/citizen/ask/birthCertificate.jsf"
+									value="Birth Certificate"
+									class="btn btn-primary btn-lg btn-block" />
+								<h:commandButton action="/citizen/ask/deathCertificate.jsf"
+									value="Death Certificate"
+									class="btn btn-default btn-lg btn-block" />
+								<h:commandButton action="/citizen/ask/weddingCertificate.jsf"
+									value="Wedding Certificate"
+									class="btn btn-danger btn-lg btn-block" />
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</ul>
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="education.jpg"
+							class="img-thumbnail" />
+
+						<div class="caption">
+							<h3>Hight Education Ministry services</h3>
+							<p>...</p>
+							<p>
+								<a href="#{request.contextPath}/citizen/schoolfees.jsf"
+									class="btn btn-primary btn-lg btn-block" role="button">schoolfees</a>
+							</p>
+
+							<p>
+								<a href="#{request.contextPath}/citizen/ask/Rek.jsf"
+									class="btn btn-dafault btn-lg btn-block" role="button">Send
+									Request</a>
+							</p>
+							<p>
+								<a href="#{request.contextPath}/citizen/subs.jsf"
+									class="btn btn-danger btn-lg btn-block" role="button">Inscription</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+			</ul>
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <h:graphicImage library="images" name="tunisie.JPG" class="img-thumbnail" />
+      <div class="caption">
+        <h3>Interior Ministry services</h3>
+        <p>...</p>
+        
+        <p><a href="http://localhost:18080/egov-web/citizen/interior/cin.jsf" class="btn btn-primary btn-lg btn-block" role="button">CIN CARD</a> <a href="http://localhost:18080/egov-web/citizen/interior/bulletin3.jsf" class="btn btn-default btn-lg btn-block" role="button">BULLETIN n°3</a><a href="http://localhost:18080/egov-web/citizen/interior/residenceCertificate.jsf" class="btn btn-danger btn-lg btn-block" role="button">RESIDENCE CERTIFICATE</a></p>
+   </div>
+    </div>
+  </div>
+
+
+			</ul>
+
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="transport.JPG"
+							class="img-thumbnail" />
+						<div class="caption">
+							<h3>Transport Ministry services</h3>
+							<p>...</p>
+							<h:form>
+								<h:commandButton class="btn btn-primary btn-lg btn-block"
+									action="/TransportRequest/VignetteTransport"
+									value="Vignette Transport" />
+								<h:commandButton class="btn btn-primary btn-lg btn-block"
+									action="/TransportRequest/Abonnement" value="Abonnement" />
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+
+			</ul>
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="post.jpg"
+							class="img-thumbnail" />
+						<div class="caption">
+							<h3>Post services</h3>
+							<p>...</p>
+							<p>
+								<a href="#{request.contextPath}/citizen/DisplayAccount.jsf"
+									class="btn btn-primary btn-lg btn-block" role="button">Receipt</a>
+							</p>
+							<p>
+								<a href="#{request.contextPath}/citizen/AddAccount.jsf"
+									class="btn btn-default btn-lg btn-block" role="button">Add
+									Account</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+			</ul>
+
+
+		</div>
+
+	</ui:define>
+</ui:composition>

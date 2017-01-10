@@ -1,0 +1,151 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:pp="http://primefaces.org/ui" template="/template/template.xhtml">
+	<ui:define name="title">Requests</ui:define>
+	<ui:define name="pageContent">
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+				<!-- Search Input -->
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-search-results -->
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li><a href="#{request.contextPath}/agent/dashboard.jsf">
+							<i class="icon-dashboard"></i> Services E-Government
+					</a></li>
+					<li><a href="#{request.contextPath}/agent/Requests.jsf"> <i
+							class="icon-edit"></i> Requests
+					</a></li>
+
+					<li><a href="#{request.contextPath}/agent/DispClaims.jsf"> <i
+							class="icon-table"></i> Display Claims
+					</a></li>
+
+
+					<li><a href="#{request.contextPath}/agent/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+				<!-- /Navigation -->
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+		<div id="content">
+			<div class="container">
+				<!--=== Inline Tabs ===-->
+				<div class="row">
+					<div class="col-md-8">
+						<div class="widget box">
+
+							<div class="widget-content">
+								<h:form class="form-horizontal row-border" action="#">
+									<div class="widget-header">
+										<h4>
+											<i class="icon-reorder"></i> View Requests
+										</h4>
+									</div>
+
+
+
+									<h:form id="form">
+										<pp:growl id="msgs" showDetail="true" />
+
+
+
+										<pp:dataTable id="radioDT" var="R"
+											value="#{gestionRequestBean.req}" rowKey="#{R.id}">
+											<f:facet name="header">
+           									 All Requests
+       										 </f:facet>
+											<pp:column selectionMode="single"
+												style="width:30px;text-align:center" />
+
+											<pp:column headerText="State">
+
+
+												<span
+													class="#{R.etat==0? 'label label-info' : 'label label-success'}">
+													#{R.etat==0? 'Pending' : 'Approved'}</span>
+											</pp:column>
+											<pp:column headerText="Service">
+												<h:outputText value="#{R.service}" />
+											</pp:column>
+		
+		<pp:column headerText="Action">
+
+								<h:commandButton value="Approuver"
+									action="#"
+									 />
+								</pp:column>
+		
+		
+		
+		
+										</pp:dataTable>
+
+
+
+									</h:form>
+
+								</h:form>
+
+							</div>
+						</div>
+					</div>
+					<!-- /.row -->
+					<!-- /Page Content -->
+				</div>
+				<!-- /.container -->
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pp="http://primefaces.org/ui">
+
+<h:head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Egovernment - Tunisia</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="hallooou.css" />
+	<!-- Color stylesheet -->
+	<h:outputStylesheet library="css" name="colors.css" />
+	<!-- Plugin stylesheets -->
+	<h:outputStylesheet library="css" name="plugins/owl.carousel.css" />
+	<h:outputStylesheet library="css" name="plugins/owl.theme.css" />
+	<h:outputStylesheet library="css" name="plugins/owl.transitions.css" />
+	<h:outputStylesheet library="css" name="plugins/animate.css" />
+	<h:outputStylesheet library="css" name="plugins/magnific-popup.css" />
+	<h:outputStylesheet library="css"
+		name="plugins/jquery.mb.YTPlayer.min.css" />
+	<!-- Custom Fonts -->
+	<h:outputStylesheet library="css" name="font-awesome.min.css" />
+	<h:outputStylesheet library="css" name="plugins/googleapi1.css" />
+	<h:outputStylesheet library="css" name="plugins/googleapi2.css" />
+
+</h:head>
+<body id="home">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+	<div class="container">
+
+		<div class="navbar-header pull-left">
+			<a class="navbar-brand page-scroll" href="#page-top"> <!-- replace with your brand logo/text -->
+				<span class="brand-logo"> <h:graphicImage library="images"
+						name="logo.png"
+						onerror="this.src='resources/images/logo.png'; this.onerror=null;"
+						alt="Hallooou - HTML5 Template" title="Hallooou - HTML5 Template"
+						class="img-responsive" />
+			</span>
+
+			</a>
+
+		</div>
+
+
+		<div class="overlay" id="overlay">
+
+			<nav class="overlay-menu">
+
+			<ul>
+
+
+				<li><a href="#products">Why choose us</a></li>
+				<li><a href="#services">What we do</a></li>
+				<li><a href="#team">Our Team</a></li>
+
+
+				<li><a href="#contact">Contact us</a></li>
+			</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- /.container --> </nav>
+
+	<section id="intro-carousel" class="carousel slide"> <!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item html5-video-container active">
+			<!-- HTML5 Video -->
+			<video muted="True" autoplay="True" loop="True"
+				poster="resources/images/typing-on-mac.jpg" id="html5-video"
+				class="fill"> <source
+				src="resources/videos/typing-on-mac.webm" type="video/webm" /> <source
+				src="resources/videos/typing-on-mac.mp4" type="video/mp4" /> </video>
+
+			<div class="carousel-caption">
+				<div align="center">
+					<span class="brand-logo"> <h:graphicImage library="images"
+							name="sigle.png"
+							onerror="this.src='resources/images/sigle.png'; this.onerror=null;"
+							alt="Hallooou - HTML5 Template" title="Hallooou - HTML5 Template"
+							class="img-responsive" />
+					</span>
+				</div>
+				<h1 class="animated slideInDown">E-Government Tunisia</h1>
+				<p class="intro-text animated slideInUp">E-Government program
+					embodies the interest of the republic of Tunisia to apply the
+					concept of e-government. The program comes within the development
+					initiatives and projects adopted by the republic to achieve
+					sustainable development in all aspects of life. This website brings
+					together the electronic governance tools and databases of the
+					Tunisian state agencies as well as provides comfortable environment
+					for their use.</p>
+
+				<a href="login.jsf" class="btn btn-default btn-lg">sign in/sign
+					up</a>
+			</div>
+
+
+			<div class="overlay-detail"></div>
+		</div>
+		<!-- /.item -->
+
+	</div>
+	<!-- /.carousel-inner -->
+	<div class="mouse"></div>
+	</section>
+
+	<!-- ************************************************************************** -->
+	<!-- About Section -->
+	<section id="about" class="about content-section alt-bg-light">
+
+	<h:form>
+		<pp:growl id="messages" showDetail="true" life="2000" />
+
+		<pp:gmap id="gmap" center="36.9001631, 10.1900768"
+			zoom="15" type="ROADMAP" style="width:100%;height:400px">
+			<pp:ajax event="stateChange" listener="#{eventView.onStateChange}"
+				update="messages" />
+			<pp:ajax event="pointSelect" listener="#{eventView.onPointSelect}"
+				update="messages" />
+		</pp:gmap>
+	</h:form>
+
+
+	<div class="container"></div>
+	<!-- /.container --> </section>
+	<!-- /.section -->
+	<!-- Products Section -->
+	<section id="products" class="products content-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Happy &amp; excited about E-GOVERNMENT TUNISIA</h2>
+				<h3 class="caption gray">Customers in 100+ countries use our
+					services</h3>
+				<p>Les Technologies de l’Information et de la Communication ont
+					considérablement progressé et ont révolutionné la vie sociale et
+					politique. Compte tenu des nombreux avantages offerts par ces
+					technologies (rapidité, réduction des coûts, plus grande portée),
+					elles sont désormais cruciales pour l’Administration Publique, qui
+					les utilise notamment pour fournir des services et communiquer
+					directement avec les citoyens. Ainsi les TIC améliorent la
+					participation citoyenne en permettant aux citoyens de mieux
+					interagir avec l’Administration.</p>
+
+				<blockquote>
+					C’est ce qu’on appelle l’eParticipation ou participation
+					électronique. L’objectif des initiatives d’eParticipation est
+					d’améliorer l’accès du citoyen à l’information, aux services
+					publics et d’améliorer sa participation à la prise de décision
+					publique <span>Ray Goforth</span>
+				</blockquote>
+
+				<h3 class="gray light">Over the Month Of April we've worked
+					with some amazing small businesses, non-profits, academic
+					institutions and even Fortune 100 companies.</h3>
+
+			</div>
+			<!-- /.col-md-6 -->
+
+			<div class="col-md-6">
+				<!-- Display image -->
+				<!-- <img src="assets/images/hallooou_template-iphone_sm.png" class="img-responsive"> -->
+				<!-- Optional video embed code -->
+				<div class="embed-responsive embed-responsive-16by9">
+					<!-- 					<iframe width="640" height="360" -->
+					<!-- 						src="https://www.youtube.com/embed/wcS34R2bQSQ?feature=player_detailpage" -->
+					<!-- 						frameborder="0" /> -->
+
+					<iframe id="player" width="620" height="360"
+						src="https://www.youtube.com/embed/eockfTmmRuc/auto_play"
+						frameborder="0"> </iframe>
+
+
+					<script>
+     
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+       
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      
+      function stopVideo() {
+        player.stopVideo();
+      }
+      function nextVideo(){
+          
+      player.nextVideo();
+      }
+      function previousVideo(){
+    	  player.previousVideo();
+          }
+    
+    </script>
+    		<script src="https://apis.google.com/js/platform.js"></script>
+    
+					<div class="g-ytsubscribe"
+						data-channelid="UCFM--mN8NNIW5-vXoZ3o2cg" data-layout="default"
+						data-count="default"></div>
+
+
+				</div>
+			</div>
+			<!-- /.col-md-6 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
+	<!-- /.section -->
+
+	<!-- ************************************************************************** -->
+	<!-- Services Section -->
+	<section id="services" class="services content-section">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-12">
+				<h2>What we do</h2>
+				<h3 class="caption gray">JSF APPLICATION E-GOVERNMENT TUNISIA</h3>
+			</div>
+			<!-- /.col-md-12 -->
+
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-4">
+						<div class="row services-item sans-shadow text-center">
+							<i class="fa fa-cogs fa-3x"></i>
+							<h4>INTERIOR MINISTRY</h4>
+							<p>Interior:protects and manages the Nation's natural
+								resources and cultural heritage</p>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-4">
+						<div class="row services-item sans-shadow text-center">
+							<i class="fa fa-align-left fa-3x"></i>
+							<h4>MUNICIPALITY</h4>
+							<p>is tasked with providing extensive services with direct
+								bearing on every home</p>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-4">
+						<div class="row services-item sans-shadow text-center">
+							<i class="fa fa-bullhorn fa-3x"></i>
+							<h4>HIGHT EDUCATION MINISTRY</h4>
+							<p>It administers the system of publicly funded elementary
+								and secondary school education in Tunisia</p>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-4">
+						<div class="row services-item sans-shadow text-center">
+							<i class="fa fa-database fa-3x"></i>
+							<h4>TRANSPORT MINISTRY</h4>
+							<p>transport:The Ministry of Transport is the government's
+								principal transport adviser</p>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-4">
+						<div class="row services-item sans-shadow text-center">
+							<i class="fa fa-align-left fa-3x"></i>
+							<h4>POST TUNISIA</h4>
+							<p>Post:The Department's mission is to shape and sustain a
+								peaceful,prosperous world</p>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-4">
+						<div class="row services-item sans-shadow text-center">
+							<i class="fa fa-camera fa-3x"></i>
+							<h4>FINANCIAL MINISTRY</h4>
+							<p>fINANCE/ /The Treasury Department is the executive agency
+							</p>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.col-md-4 -->
+
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container --> </section>
+	<!-- /.products -->
+
+	<!-- ************************************************************************** -->
+	<!-- Our team Section -->
+	<section id="team" class="team content-section">
+	<div class="container"></div>
+	<!-- /.container --> </section>
+	<!-- /.our-team -->
+	<!-- Portfolio/Gallery Section -->
+	<section id="portfolio" class="portfolio content-section parallax">
+	<div class="container">
+		<div class="row text-center">
+			<div class="row text-center">
+				<div class="col-md-12">
+					<h2>Dream-Team Members</h2>
+					<h3 class="caption gray">Meet the people who make awesome
+						stuffs</h3>
+				</div>
+				<!-- /.col-md-12 -->
+
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-4">
+							<div class="team-member">
+								<figure> <h:graphicImage
+									value="resources/images/molkaayadi.jpg" alt=""
+									class="img-responsive" /> <figcaption>
+
+								<ul>
+									<li><a href="https://www.facebook.com/molka.ayadi"><i
+											class="fa fa-facebook fa-2x"></i></a></li>
+
+								</ul>
+								</figcaption></figure>
+								<h4>AYADI Molka</h4>
+								<p>Creative Director</p>
+							</div>
+							<!-- /.team-member -->
+						</div>
+						<!-- /.col-md-4 -->
+
+						<div class="col-md-4">
+							<div class="team-member">
+								<figure> <h:graphicImage
+									value="resources/images/maherglenza.jpg" alt=""
+									class="img-responsive" /> <figcaption>
+
+								<ul>
+									<li><a
+										href="https://www.facebook.com/profile.php?id=100007372248102"><i
+											class="fa fa-facebook fa-2x"></i></a></li>
+
+								</ul>
+								</figcaption></figure>
+								<h4>GLENZA Maher</h4>
+								<p>UI/UX Designer and Web devolopper</p>
+							</div>
+							<!-- /.team-member -->
+						</div>
+						<!-- /.col-md-4 -->
+
+						<div class="col-md-4">
+							<div class="team-member">
+								<figure> <h:graphicImage
+									value="resources/images/khouloudabidi.jpg" alt=""
+									class="img-responsive" /> <figcaption>
+
+								<ul>
+									<li><a href="https://www.facebook.com/khouloud.abidi.568"><i
+											class="fa fa-facebook fa-2x"></i></a></li>
+
+								</ul>
+								</figcaption></figure>
+								<h4>ABIDI Khouloud</h4>
+								<p>Web Developer</p>
+							</div>
+							<!-- /.team-member -->
+						</div>
+						<!-- /.col-md-4 -->
+
+
+						<div class="col-md-4">
+							<div class="team-member">
+								<figure> <h:graphicImage
+									value="resources/images/houssemtayech.jpg" alt=""
+									class="img-responsive" /> <figcaption>
+
+								<ul>
+									<li><a
+										href="https://www.facebook.com/profile.php?id=100006272385609"><i
+											class="fa fa-facebook fa-2x"></i></a></li>
+
+								</ul>
+								</figcaption></figure>
+								<h4>TAYECH Houssem</h4>
+								<p>UI/UX Designer and Web devolopper</p>
+							</div>
+							<!-- /.team-member -->
+						</div>
+						<!-- /.col-md-4 -->
+
+						<div class="col-md-4">
+							<div class="team-member">
+								<figure> <h:graphicImage
+									value="resources/images/wissembachrouch.jpg" alt=""
+									class="img-responsive" /> <figcaption>
+
+								<ul>
+									<li><a href="https://www.facebook.com/wissem.bachrouch"><i
+											class="fa fa-facebook fa-2x"></i></a></li>
+
+								</ul>
+								</figcaption></figure>
+								<h4>BACHROUCH Wissem</h4>
+								<p>Concepter</p>
+							</div>
+							<!-- /.team-member -->
+						</div>
+						<!-- /.col-md-4 -->
+
+						<div class="col-md-4">
+							<div class="team-member">
+								<figure> <h:graphicImage
+									value="resources/images/faroukjridi.jpg" alt=""
+									class="img-responsive" /> <figcaption>
+
+								<ul>
+									<li><a href="https://www.facebook.com/farouk.jridi"><i
+											class="fa fa-facebook fa-2x"></i></a></li>
+
+								</ul>
+								</figcaption></figure>
+								<h4>JRIDI Farouk</h4>
+								<p>Web Developer</p>
+							</div>
+							<!-- /.team-member -->
+						</div>
+						<!-- /.col-md-4 -->
+
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> <!-- /.container --> </section>
+	<!-- /.portfolio -->
+
+
+	<!-- ************************************************************************** -->
+	<!-- Our team Section -->
+	<section id="team" class="team content-section">
+	<div class="container"></div>
+	<!-- /.container --> </section>
+	<!-- /.our-team -->
+
+	<!-- Counter Section -->
+	<section id="counter" class="counter-section content-section">
+	<div class="container">
+		<!-- Contact section -->
+		<section id="contact" class="contact content-section no-bottom-pad">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-12">
+					<h2>Contact</h2>
+					<h3 class="caption gray">Feel free to get in touch with us if
+						you have a new project or simply something awesome</h3>
+				</div>
+				<!-- /.col-md-12 -->
+
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+
+		<div class="container">
+			<div class="row form-container">
+
+				<div class="col-md-8 contact-form">
+					<h3>Drop us a line</h3>
+					<h:form class="ajax-form" id="contactForm">
+						<div class="form-group">
+							<h:outputLabel value="name" />
+							<h:inputText type="text" class="form-control" id="name"
+								name="name" placeholder="Your Name..." value="#{mailBean.name}"
+								required="True" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="email" />
+							<h:inputText type="email" class="form-control" id="email"
+								name="email" placeholder="Your email..."
+								value="#{mailBean.mailAddress}" required="True" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="phone" />
+							<h:inputText type="phone" class="form-control" id="phone"
+								name="phone" placeholder="Your subject..."
+								value="#{mailBean.subject}" required="True" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="message" />
+							<h:inputTextarea class="form-control" rows="4" name="message"
+								placeholder="Your message..." value="#{mailBean.msg}"
+								required="True" />
+						</div>
+						<div class="form-group">
+							<h:commandButton action="#{mailBean.sendMail()}" value="send"
+								name="submit" class="btn btn-default">
+								<i class="fa fa-paper-plane fa-fw"></i>
+							</h:commandButton>
+						</div>
+					</h:form>
+				</div>
+				<!-- /.contact-form -->
+
+				<div class="col-md-4 contact-address">
+					<h3>Our address</h3>
+					<p>
+						Chotrana II B.P. 160 , <br />Pôle Technologique El Ghazela Ariana
+						2088, <br /> TUNISIE
+					</p>
+					<ul>
+						<li><span>Email:</span>admegovernment@gmail.com</li>
+						<li><span>Phone:</span>+216 70 685 685</li>
+					</ul>
+				</div>
+				<!-- /.contact-address -->
+
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container --> </section>
+	</div>
+	<!-- /.container --> </section>
+	<!-- /.counter-section -->
+
+	<!-- Footer -->
+	<footer>
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-12 segment">
+				<a href="#" title="Hallooou - HTML5 Template">
+					<h2>
+						<!-- replace with your brand logo/text -->
+						<h:graphicImage value="resources/images/logo.png"
+							onerror="this.src='resources/images/logo.png'; this.onerror=null;"
+							alt="Hallooou - HTML5 Template" title="Hallooou - HTML5 Template"
+							class="img-responsive" />
+
+					</h2>
+				</a>
+
+			</div>
+			<!-- /.col-md-12 -->
+		</div>
+		<!-- /.row -->
+
+		<div class="row text-center">
+			<div class="col-md-12 social segment">
+				<h4>Keep In Touch</h4>
+				<a href="https://www.facebook.com/E-gov-570759643101106/"><i class="fa fa-facebook fa-3x"></i></a> <a href="https://twitter.com/TnEgov"><i
+					class="fa fa-twitter fa-3x"></i></a> <a
+					href="https://www.youtube.com/channel/UCFM--mN8NNIW5-vXoZ3o2cg"><i
+					class="fa fa-youtube fa-3x"></i></a>
+				<!-- 					<h:link hreflang=""/> -->
+
+				<!-- 					<li><a href="https://www.facebook.com/farouk.jridi"><i -->
+				<!-- 											class="fa fa-facebook fa-2x"></i></a></li> -->
+			</div>
+			<!-- /.col-md-12 -->
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
+
+	<div class="copynote">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">&copy; 2016. Dream Team.
+					All rights reserved.</div>
+				<!-- /.col-md-12 -->
+
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.copynote -->
+
+	<div class="nav pull-right scroll-top">
+		<a href="#home" title="Scroll to top"><i class="fa fa-angle-up"></i></a>
+	</div>
+
+	</footer>
+	<!-- /.footer -->
+
+
+	<!-- ************************************************************************** -->
+
+
+	<!-- ************************************************************************** -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<h:outputScript library="js" name="plugins/wow.min.js" />
+	<h:outputScript library="js" name="plugins/owl.carousel.min.js" />
+	<h:outputScript library="js" name="plugins/jquery.parallax-1.1.3.js" />
+	<h:outputScript library="js"
+		name="plugins/jquery.magnific-popup.min.js" />
+
+	<h:outputScript library="js" name="plugins/jquery.mb.YTPlayer.min.js" />
+	<h:outputScript library="js" name="plugins/jquery.countTo.js" />
+	<h:outputScript library="js" name="plugins/jquery.inview.min.js" />
+
+	<h:outputScript library="js" name="plugins/pace.min.js" />
+	<h:outputScript library="js" name="plugins/jquery.easing.min.js" />
+	<h:outputScript library="js" name="plugins/jquery.validate.min.js" />
+	<h:outputScript library="js" name="plugins/additional-methods.min.js" />
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoVKfEihX__NdMwdDysA6Vve6PE9Ierj4"></script>
+		
+
+</body>
+
+</html>

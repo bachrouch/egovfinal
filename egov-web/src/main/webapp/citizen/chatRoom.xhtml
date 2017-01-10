@@ -1,0 +1,218 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:pp="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+
+
+	<ui:define name="title">Chat-Room</ui:define>
+	<ui:define name="pageContent">
+
+
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+
+
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-search-results -->
+
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li><a href="#{request.contextPath}/citizen/dashboard.jsf">
+							<i class="icon-dashboard"></i> Dashboard
+					</a></li>
+					<li><a href="#{request.contextPath}/citizen/ask.jsf"> <i
+							class="icon-edit"></i> Ask for service
+					</a></li>
+
+					<li><a href="#{request.contextPath}/citizen/asked.jsf"> <i
+							class="icon-table"></i> Your asked services
+					</a></li>
+
+
+
+
+					<li><a href="#{request.contextPath}/citizen/invoice.jsf">
+							<i class="icon-angle-right"></i> Invoice
+					</a></li>
+					<li><a href="#{request.contextPath}/citizen/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+				<!-- /Navigation -->
+
+
+
+
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+
+		<div id="content">
+			<div class="row">
+				<!--=== Invoice ===-->
+				<div class="col-md-12">
+					<div class="widget invoice">
+						<div class="widget-header">
+							<div class="pull-left">
+								<h2>E-GOVERNMENT TUNISIA</h2>
+							</div>
+							<div class="pull-right">
+								<p class="invoice-nr">
+									<strong>WebSocket:</strong>CHAT-ROOM 
+								</p>
+								<p class="invoice-date">For Client</p>
+							</div>
+						</div>
+						<div class="widget-content">
+							<div class="row">
+								<!--=== Adresses ===-->
+								<div class="col-md-6">
+									
+									<h:form>
+    <pp:growl id="msgs" showDetail="true" />
+ 
+    <pp:panel id="basic" header="Basic" footer="Chat" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <div style="margin-bottom: 20px;">
+            <button type="button"  onclick="openSocket();" >Get OnLine !!!</button>
+            
+            <button type="button" onclick="closeSocket();" >Disconnect émoticône unsure </button>
+        </div>
+    <div style="margin-bottom: 20px;">
+        <input type="text" id="messageinput" size="60"/>
+        </div>
+        <!-- Server responses get written here -->
+        
+       <button type="button" onclick="send();" >Send </button>
+     
+            <div style="margin-top: 20px;" class="cities"  id="messages"></div> 
+        </h:panelGrid>
+    </pp:panel></h:form>
+      
+        <!-- Script to utilise the WebSocket -->
+        <script type="text/javascript">
+                       
+            var webSocket;
+            var messages = document.getElementById("messages");
+           
+           
+            function openSocket(){
+                // Ensures only one connection is open at a time
+              
+                if(webSocket !== undefined &amp;&amp; webSocket.readyState !== WebSocket.CLOSED){
+                   writeResponse("You are already connected ");
+                    return;
+                }
+                // Create a new instance of the websocket
+                webSocket = new WebSocket("ws://localhost:18080/egov-web/echo");
+                 
+                /**
+                 * Binds functions to the listeners for the websocket.
+                 */
+                webSocket.onopen = function(event){
+                    // For reasons I can't determine, onopen gets called twice
+                    // and the first time event.data is undefined.
+                    // Leave a comment if you know the answer.
+                    if(event.data === undefined)
+                        return;
+ 
+                    writeResponse(event.data);
+                };
+ 
+                webSocket.onmessage = function(event){
+                    writeResponse(event.data);
+                };
+ 
+                webSocket.onclose = function(event){
+                    writeResponse("Disconnected :/ ");
+                };
+            }
+           
+            /**
+             * Sends the value of the text input to the server
+             */
+            function send(){
+                var text = document.getElementById("messageinput").value;
+                webSocket.send(text);
+            }
+           
+            function closeSocket(){
+                webSocket.close();
+            }
+ 
+            function writeResponse(text){
+                messages.innerHTML += "<br/>" + text;
+            }
+
+
+      </script>
+									
+									
+									
+								</div>
+
+								
+								<!-- /.row -->
+							</div>
+						</div>
+						<!-- /.widget box -->
+					</div>
+					<!-- /.col-md-12 -->
+					<!-- /Invoice -->
+				</div>
+
+			</div>
+			</div>
+	</ui:define>
+</ui:composition>

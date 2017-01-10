@@ -1,0 +1,307 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+	<ui:define name="title">Display Claims</ui:define>
+	<ui:define name="pageContent">
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+				<!-- Search Input -->
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-search-results -->
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li><a href="#{request.contextPath}/agent/dashboard.jsf">
+							<i class="icon-dashboard"></i> Services E-Government
+					</a></li>
+					<li><a href="#{request.contextPath}/agent/Requests.jsf"> <i
+							class="icon-edit"></i> Requests
+					</a></li>
+
+					<li><a href="#{request.contextPath}/agent/DispClaims.jsf"> <i
+							class="icon-table"></i> Display Claims
+					</a></li>
+
+
+					<li><a href="#{request.contextPath}/agent/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+				<!-- /Navigation -->
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+<!-- 		<div id="content"> -->
+<!-- 			<div class="container"> -->
+<!-- 				=== Inline Tabs === -->
+<!-- 				<div class="row"> -->
+<!-- 					<div class="col-md-8"> -->
+<!-- 						<div class="widget box"> -->
+
+<!-- 							<div class="widget-content"> -->
+<!-- 								<h:form class="form-horizontal row-border" action="#"> -->
+<!-- 									<div class="widget-header"> -->
+<!-- 										<h4> -->
+<!-- 											<i class="icon-reorder"></i> View Requests -->
+<!-- 										</h4> -->
+<!-- 									</div> -->
+								
+
+
+<!-- 									<h:form id="form"> -->
+<!-- 										<pp:growl id="msgs" showDetail="true" /> -->
+
+										
+
+<!-- 										<pp:dataTable id="radioDT" var="R" -->
+<!-- 											value="#{gestionRequestBean.requests}" rowKey="#{R.id}"> -->
+<!-- 											<f:facet name="header"> -->
+<!--             All Requests -->
+<!--         </f:facet> -->
+<!-- 											<pp:column selectionMode="single" -->
+<!-- 												style="width:30px;text-align:center" /> -->
+<!-- 											<pp:column headerText="Department"> -->
+<!-- 												<h:outputText value="#{R.departement}" /> -->
+<!-- 											</pp:column> -->
+<!-- 											<pp:column headerText="State"> -->
+												
+
+<!-- 												<span -->
+<!-- 													class="#{R.etat==0? 'label label-info' : 'label label-success'}"> -->
+<!-- 													#{R.etat==0? 'Pending' : 'Approved'}</span> -->
+<!-- 											</pp:column> -->
+<!-- 											<pp:column headerText="Service"> -->
+<!-- 												<h:outputText value="#{R.service}" /> -->
+<!-- 											</pp:column> -->
+
+<!-- 										</pp:dataTable> -->
+
+									
+
+<!-- 									</h:form> -->
+
+<!-- 								</h:form> -->
+
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					/.row -->
+<!-- 					/Page Content -->
+<!-- 				</div> -->
+<!-- 				/.container -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+
+		<div id="content">
+			<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i> Simple Table</h4>
+								<div class="toolbar no-padding">
+									<div class="btn-group">
+										<span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+									</div>
+								</div>
+							</div>
+							<div class="widget-content">
+<h:form >
+<center>
+<table>
+<tr>
+<td>
+<p:outputLabel  value="Type:         " />
+</td>
+<td>
+<p:selectOneMenu value="#{reclamationBean.typeclaim}" effect="fold"  >
+ <f:selectItem itemLabel="          All claims        " itemValue="" />
+  <f:selectItem itemLabel="Technical" itemValue="Technical" />
+    <f:selectItem itemLabel="Services" itemValue="Services" />
+</p:selectOneMenu>
+</td>
+<td>
+		<div class="form-group">
+										<label class="col-md-2 control-label"></label>
+										<h:commandButton action="#{reclamationBean.doRecherche(reclamationBean.typeclaim)}" value="Choose" class="btn btn-danger"/>
+										
+									</div>
+									</td>
+</tr>
+</table>
+</center>
+<center>
+<h:form rendered="#{reclamationBean.displaytable}">
+
+<h:dataTable width="80%"  value="#{reclamationBean.reclamations}" var="R"  border="1"
+    		 styleClass="classique" rules="rows"  headerClass="classique"
+    			
+    		>
+
+    				<h:column   >
+    				<!-- column header -->
+    				<f:facet name="header" ></f:facet>
+    				<!-- row record -->
+    				<center>
+    				   <p:selectBooleanCheckbox  id="basic" value="#{reclamationBean.checked[R.id]}" 
+    		  >
+    						  
+        <f:selectItem itemLabel="" itemValue="#{R.sujet}"     />
+  </p:selectBooleanCheckbox>
+    </center>
+    				
+    			</h:column>
+    		
+    				<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Subject</f:facet>
+    				<!-- row record -->
+    						<h:outputText value="#{R.sujet}"/>
+    				
+    			</h:column>
+    						<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Text</f:facet>
+    				<!-- row record -->
+    						<h:outputText value="#{R.text}"/>
+    				
+    			</h:column>
+    								<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Type</f:facet>
+    				<!-- row record -->
+    						<h:outputText value="#{R.type}"/>
+    				
+    			</h:column>
+  
+    	
+    								<h:column>
+    				<!-- column header -->
+    				<f:facet name="header"> Action</f:facet>
+    				
+    				
+    				
+    				<p:growl id="growl" life="2000" />
+    				
+ <p:commandButton update="growl" id="iconOnly"  icon="ui-icon-mail-closed" title="Icon Only" ajax="false" action="#{reclamationBean.Doadress(R.mail)}"  >
+ <f:setPropertyActionListener value="true" target="#{reclamationBean.activerformulaire}" ></f:setPropertyActionListener>
+
+</p:commandButton>
+    				 <p:growl id="message" showDetail="true" />
+
+
+    	
+    			</h:column>
+   
+    		</h:dataTable>
+    		     
+  
+    		
+    		<p:separator />
+    		  <p:dialog header="Values" modal="true" showEffect="clip" widgetVar="dlg" resizable="false">
+        <p:outputPanel id="display">
+            <p:dataList value="#{reclamationBean.checked}" var="console">
+                <f:facet name="header">
+                     Claim selected 
+                </f:facet>
+                <h2>removal affected</h2>
+            </p:dataList>
+  
+        </p:outputPanel>
+    </p:dialog>
+ 
+    <p:commandButton value="Delete" update="display" oncomplete="PF('dlg').show()" icon="ui-icon-trash"  action="#{reclamationBean.submit()}"  >
+       <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+    </p:commandButton>
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"  />
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
+  
+
+
+    		
+    		</h:form>
+    				    			  	
+    
+    	
+    	
+    		
+    		</center>
+    		</h:form>
+    		    			  		<p:separator />
+    		    			  							<h:form rendered="#{reclamationBean.activerformulaire}">
+    			
+    		
+						<div class="form-group">
+									<label class="col-md-2 control-label">Text:</label>
+										<div class="col-md-10">
+										<h:inputTextarea  value="#{reclamationBean.subject}" rows="5" name="wysiwyg" class="form-control wysiwyg"/>
+										
+										</div>
+									</div>
+					
+					<!-- /Input Fields -->
+					<h:commandButton action="#{reclamationBean.sendPwd()}"
+						value="Reponse Claim"
+						 class="submit btn btn-default btn-block"   ajax="false"  />
+					
+    			</h:form>
+    
+							</div>
+						</div>
+						<!-- /Simple Table -->
+					</div>
+
+		</div>
+
+
+
+	</ui:define>
+</ui:composition>

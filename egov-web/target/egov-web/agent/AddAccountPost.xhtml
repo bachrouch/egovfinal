@@ -1,0 +1,156 @@
+<ui:composition
+ xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:pp="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+	
+<ui:define name="title">Add Account</ui:define>
+	<ui:define name="pageContent">
+
+
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+
+
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+
+<ul id="nav">
+					<li><a href="#{request.contextPath}/agent/dashboard.jsf">
+							<i class="icon-dashboard"></i> Services E-Government
+					</a></li>
+					<li><a href="#{request.contextPath}/agent/Requests.jsf"> <i
+							class="icon-edit"></i> Requests
+					</a></li>
+
+					<li><a href="#{request.contextPath}/agent/DispClaims.jsf"> <i
+							class="icon-table"></i> Display Claims
+					</a></li>
+
+
+					<li><a href="#{request.contextPath}/agent/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+</div>
+<div id="divider" class="resizeable"></div>
+		</div>
+
+		<div id="content">
+			<div class="row">
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i> Add Account</h4>
+							</div>
+						
+						
+						<div class="widget-content">
+								<h:form class="form-horizontal row-border" >
+									<div class="alert alert-info fade in">
+										<i class="icon-remove close" data-dismiss="alert"></i> This
+										are examples of full width input fields. Please find
+										select-boxes and other things below.
+									</div>
+									<div class="form-group">
+										<label class="col-md-4 control-label">First name:</label>
+										<div class="col-md-5">
+										<h:inputText value="#{gestionPostBean.fn}" name="regular" />
+										
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-4 control-label">Last name:</label>
+										<div class="col-md-5"><h:inputText value="#{gestionPostBean.ln}" name="regular" /></div>
+									</div>
+									
+							
+									
+								
+
+											
+										<div class="form-group">
+										<label class="col-md-4 control-label">CIN:</label>
+										<div class="col-md-5"><h:inputText value="#{gestionPostBean.cinn}" name="regular" /></div>
+									</div>
+										
+										
+										<div class="form-group">
+										<label class="col-md-4 control-label">IBAN:</label>
+										<div class="col-md-5"><h:inputText value="#{gestionPostBean.iban}" name="regular" /></div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-md-4 control-label">NCC:</label>
+										<div class="col-md-5"><h:inputText value="#{gestionPostBean.ncc}" name="regular" /></div>
+									</div>
+									<div class="form-actions">
+										<h:commandButton action="#{gestionPostBean.ajout()}" value="submit" class="btn btn-primary pull-right"/>
+										
+									</div>
+								</h:form>
+							</div>
+						
+						
+						
+						
+							
+					
+	
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+</ui:define>
+</ui:composition>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:p="http://primefaces.org/ui">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+</head>
+<body>
+
+	
+	<a href="#popup-2" data-position-to="window" data-rel="popup" class="ui-btn ui-corner-all ui-alt-icon ui-shadow ui-btn-inline" title="Popup"></a>
+	<div data-role="popup" id="popup-2" class="ui-content" data-overlay-theme="b">
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+		<div class="overlay" id="overlay">
+
+			<nav class="overlay-menu">
+
+			<ul>
+
+
+				<li><a href="#products">Why choose us</a></li>
+				<li><a href="#services">What we do</a></li>
+				<li><a href="#team">Our Team</a></li>
+
+
+				<li><a href="#contact">Contact us</a></li>
+			</ul>
+			</nav>
+		</div>
+	</div>
+	
+	
+	
+	<h:outputScript library="js" name="jquery-2.0.1.min.js"></h:outputScript>
+	<h:outputScript library="js" name="jquery.mobile-1.4.5.min.js"></h:outputScript>
+</body>
+</html>

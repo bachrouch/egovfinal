@@ -1,0 +1,453 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:pp="http://primefaces.org/ui" template="/template/template.xhtml">
+
+	<ui:define name="title">Doing Services</ui:define>
+	<ui:define name="pageContent">
+
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+
+
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-search-results -->
+
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li><a href="#{request.contextPath}/agent/dashboard.jsf">
+							<i class="icon-dashboard"></i> Services E-Government
+					</a></li>
+					<li><a href="#{request.contextPath}/agent/Requests.jsf"> <i
+							class="icon-edit"></i> Requests
+					</a></li>
+
+					<li><a href="#{request.contextPath}/agent/DispClaims.jsf"> <i
+							class="icon-table"></i> Display Claims
+					</a></li>
+
+
+					<li><a href="#{request.contextPath}/agent/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+				<!-- /Navigation -->
+
+
+
+
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+
+		<div id="content">
+			<div class="container">
+
+				<!-- /Breadcrumbs line -->
+
+				<!--=== Page Header ===-->
+<!-- 				<div class="page-header"> -->
+<!-- 					<div class="page-title"> -->
+<!-- 						<h3>User Profile</h3> -->
+<!-- 						<span>Hello Dear Client</span> -->
+<!-- 					</div> -->
+
+<!-- 					Page Stats -->
+
+<!-- 					/Page Stats -->
+<!-- 				</div> -->
+				<!-- /Page Header -->
+
+				<!--=== Page Content ===-->
+				<!--=== Inline Tabs ===-->
+<!-- 				<div class="row"> -->
+<!-- 					<div class="col-md-12"> -->
+<!-- 						Tabs -->
+<!-- 						<div class="tabbable tabbable-custom tabbable-full-width"> -->
+<!-- 							<ul class="nav nav-tabs"> -->
+<!-- 								<li class="active"><a href="#tab_overview" -->
+<!-- 									data-toggle="tab">Overview</a></li> -->
+<!-- 								<li><a href="#tab_edit_account" data-toggle="tab">Edit -->
+<!-- 										Account</a></li> -->
+<!-- 							</ul> -->
+<!-- 							<div class="tab-content row"> -->
+<!-- 								=== Overview === -->
+<!-- 								<div class="tab-pane active" id="tab_overview"> -->
+<!-- 									<div class="col-md-3"> -->
+<!-- 										<div class="list-group"> -->
+<!-- 											<li class="list-group-item no-padding"><pp:graphicImage -->
+<!-- 													width="200" -->
+<!-- 													height="200" /></li> -->
+
+<!-- 										</div> -->
+<!-- 									</div> -->
+
+<!-- 									<div class="col-md-9"> -->
+<!-- 										<div class="row profile-info"> -->
+<!-- 											<div class="col-md-12"> -->
+
+<!-- 												<h:outputLabel /> -->
+
+<!-- 												<dl class="dl-horizontal"> -->
+<!-- 													<dt>Description lists</dt> -->
+<!-- 													<dd>Now You are logging In Our WEB Site E-GOV TUNISIA</dd> -->
+
+<!-- 													<dt>Client</dt> -->
+<!-- 													<dd>We have set up an appointment Choose an item at -->
+<!-- 														Phone number or location on Date at Time. If this is not a -->
+<!-- 														good time for you, please call our office at the number -->
+<!-- 														below and we will arrange a new time.</dd> -->
+
+<!-- 													<dt>eParticipation</dt> -->
+<!-- 													<dd>The Information and communication technologies -->
+<!-- 														have advanced significantly and have revolutionized the -->
+<!-- 														social and political life. Given the many advantages -->
+<!-- 														offered by these technologies (speed, cost reduction, -->
+<!-- 														longer range), they are now crucial to the Public -->
+<!-- 														Administration, which notably uses to provide services and -->
+<!-- 														communicate directly with citizens. Thus ICT improves -->
+<!-- 														citizen participation by enabling citizens to interact -->
+<!-- 														better with the Administration.</dd> -->
+<!-- 												</dl> -->
+
+<!-- 												<p>This is called eParticipation or electronic -->
+<!-- 													participation. The objective of eParticipation initiatives -->
+<!-- 													to improve citizen access to information, public services -->
+<!-- 													and enhance its participation in public decision making.</p> -->
+<!-- 											</div> -->
+
+<!-- 										</div> -->
+<!-- 										/.row -->
+
+<!-- 										/.row -->
+<!-- 									</div> -->
+<!-- 									/.col-md-9 -->
+<!-- 								</div> -->
+<!-- 								/Overview -->
+
+<!-- 								=== Edit Account === -->
+<!-- 								<div class="tab-pane" id="tab_edit_account"> -->
+<!-- 									<h:form> -->
+<!-- 										<div class="col-md-12"> -->
+<!-- 											<div class="widget"> -->
+<!-- 												<div class="widget-header"> -->
+<!-- 													<h4>General Information</h4> -->
+<!-- 												</div> -->
+<!-- 												<div class="widget-content"> -->
+<!-- 													<div class="row"> -->
+<!-- 														<div class="col-md-6"> -->
+<!-- 															<div class="form-group"> -->
+<!-- 																<label class="col-md-4 control-label">First -->
+<!-- 																	name:</label> -->
+<!-- 																<div class="col-md-8"> -->
+<!-- 																	<h:inputText type="text" name="regular1" -->
+<!-- 																		class="form-control" -->
+<!-- 																		 /> -->
+<!-- 																</div> -->
+<!-- 															</div> -->
+
+<!-- 															<div class="form-group"> -->
+<!-- 																<label class="col-md-4 control-label">Last name:</label> -->
+<!-- 																<div class="col-md-8"> -->
+<!-- 																	<h:inputText type="text" name="regular2" -->
+<!-- 																		class="form-control" -->
+<!-- 																		/> -->
+<!-- 																</div> -->
+<!-- 															</div> -->
+
+
+<!-- 														</div> -->
+
+
+<!-- 														<div class="col-md-6"> -->
+<!-- 															<div class="form-group"> -->
+<!-- 																<label class="col-md-4 control-label">Adress:</label> -->
+<!-- 																<div class="col-md-8"> -->
+<!-- 																	<h:inputText type="text" name="regular3" -->
+<!-- 																		class="form-control" -->
+<!-- 																		 /> -->
+<!-- 																</div> -->
+<!-- 															</div> -->
+
+<!-- 															<div class="form-group"> -->
+<!-- 																<label class="col-md-4 control-label">CIN:</label> -->
+<!-- 																<div class="col-md-8"> -->
+<!-- 																	<h:inputText type="text" name="regular4" -->
+<!-- 																		class="form-control input-width-small" -->
+																		
+<!-- 																		disabled="disabled" /> -->
+<!-- 																</div> -->
+<!-- 																<div class="form-group"> -->
+<!-- 																<label class="col-md-4 control-label">Email:</label> -->
+<!-- 																<div class="col-md-8"> -->
+<!-- 																	<h:inputText type="text" name="regular5" -->
+<!-- 																		class="form-control" -->
+																		
+<!-- 																		 /> -->
+<!-- 																</div> -->
+<!-- 															</div> -->
+
+
+
+
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 													/.row -->
+<!-- 												</div> -->
+<!-- 												/.widget-content -->
+<!-- 											</div> -->
+<!-- 											/.widget -->
+<!-- 										</div> -->
+<!-- 										/.col-md-12 -->
+
+<!-- 										<div class="col-md-12 form-vertical no-margin"> -->
+<!-- 											<div class="widget"> -->
+<!-- 												<div class="widget-header"> -->
+<!-- 													<h4>Settings</h4> -->
+<!-- 												</div> -->
+<!-- 												<div class="widget-content"> -->
+<!-- 													<div class="row"> -->
+<!-- 														<div class="col-md-4 col-lg-2"> -->
+<!-- 															<strong class="subtitle padding-top-10px">Permanent -->
+<!-- 																username</strong> -->
+
+<!-- 														</div> -->
+
+<!-- 														<div class="col-md-8 col-lg-10"> -->
+<!-- 															<div class="form-group"> -->
+<!-- 																<label class="control-label padding-top-10px">Username:</label> -->
+
+<!-- 																<h:inputText type="text" name="username" -->
+<!-- 																	class="form-control" -->
+<!-- 																	value="#{gestionAgentBean.agent.login}" -->
+<!-- 																	disabled="disabled" /> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 													/.row -->
+<!-- 													<div class="row"> -->
+<!-- 														<div class="col-md-4 col-lg-2"> -->
+<!-- 															<strong class="subtitle">Change password</strong> -->
+
+<!-- 														</div> -->
+
+<!-- 														<div class="col-md-8 col-lg-10"> -->
+<!-- 															<div class="form-group"> -->
+<!-- 																<label class="control-label">Old password:</label> -->
+<!-- 																<h:inputText type="password" name="old_password" -->
+<!-- 																	class="form-control" -->
+<!-- 																	value="#{gestionAgentBean.agent.pwd}" -->
+<!-- 																	placeholder="Leave empty for no password-change" -->
+<!-- 																	required="false" /> -->
+<!-- 															</div> -->
+
+
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 													/.row -->
+<!-- 												</div> -->
+<!-- 												/.widget-content -->
+<!-- 											</div> -->
+<!-- 											/.widget -->
+
+<!-- 											<div class="form-actions"> -->
+<!-- 												<h:commandButton  -->
+<!-- 													value="Update Account" class="btn btn-primary pull-right" /> -->
+<!-- 											</div> -->
+<!-- 										</div></div> -->
+<!-- 										/.col-md-12 -->
+<!-- 									</h:form> -->
+<!-- 								</div> -->
+<!-- 								/Edit Account -->
+<!-- 							</div> -->
+<!-- 							/.tab-content -->
+<!-- 						</div> -->
+<!-- 						END TABS -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+				<!-- /.row -->
+				<!-- /Page Content -->
+				
+				
+					<div id="content" align="center">
+
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="municipality.jpg"
+							class="img-thumbnail" />
+						<div class="caption">
+							<h3>Municipality services</h3>
+							<p>...</p>
+							<h:form> 
+								
+								
+<!-- 								<h:commandButton action="/agent/stat.jsf" -->
+<!-- 									valuxe="Gender Statistics" -->
+<!-- 									class="btn btn-danger btn-lg btn-block" /> -->
+									
+									
+									
+<!-- 							</h:form> -->
+							<p>
+								<a href="#{request.contextPath}/agent/stat.jsf"
+									class="btn btn-primary btn-lg btn-block" role="button">Gender Statistics</a>
+							</p>
+
+							<p>
+								<a href="#{request.contextPath}/agent/Ajoutbebe.jsf"
+									class="btn btn-dafault btn-lg btn-block" role="button">Add a Child</a>
+							</p>
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</ul>
+			
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="education.jpg"
+							class="img-thumbnail" />
+
+						<div class="caption">
+							<h3>Hight Education Ministry services</h3>
+							<p>...</p>
+							<p>
+								<a href="#{request.contextPath}/agent/AjoutEtudiant.jsf"
+									class="btn btn-primary btn-lg btn-block" role="button">Student Registration</a>
+							</p>
+
+							
+							
+						</div>
+					</div>
+				</div>
+
+
+			</ul>
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <h:graphicImage library="images" name="tunisie.JPG" class="img-thumbnail" />
+      <div class="caption">
+        <h3>Interior Ministry services</h3>
+        <p>...</p>
+        
+        <p><a href="http://localhost:18080/egov-web/citizen/interior/cin.jsf" class="btn btn-primary btn-lg btn-block" role="button">CIN CARD</a> <a href="http://localhost:18080/egov-web/citizen/interior/bulletin3.jsf" class="btn btn-default btn-lg btn-block" role="button">BULLETIN n°3</a><a href="http://localhost:18080/egov-web/citizen/interior/residenceCertificate.jsf" class="btn btn-danger btn-lg btn-block" role="button">RESIDENCE CERTIFICATE</a></p>
+   </div>
+    </div>
+  </div>
+
+
+			</ul>
+
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="transport.JPG"
+							class="img-thumbnail" />
+						<div class="caption">
+							<h3>Transport Ministry services</h3>
+							<p>...</p>
+							<h:form>
+								<h:commandButton class="btn btn-primary btn-lg btn-block"
+									action="/TransportRequest/VignetteTransport"
+									value="Vignette Transport" />
+								<h:commandButton class="btn btn-primary btn-lg btn-block"
+									action="/TransportRequest/Abonnement" value="Abonnement" />
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+
+			</ul>
+			<ul>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<h:graphicImage library="images" name="post.jpg"
+							class="img-thumbnail" />
+						<div class="caption">
+							<h3>Post services</h3>
+							<p>...</p>
+							<p>
+								<a href="#{request.contextPath}/citizen/DisplayAccount.jsf"
+									class="btn btn-primary btn-lg btn-block" role="button">Receipt</a>
+							</p>
+							<p>
+								<a href="#{request.contextPath}/agent/AddAccountPost.jsf"
+									class="btn btn-default btn-lg btn-block" role="button">Add
+									Account</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+			</ul>
+
+
+		</div>
+				
+			</div>
+			<!-- /.container -->
+
+</div>
+	</ui:define>
+</ui:composition>

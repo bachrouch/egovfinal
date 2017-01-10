@@ -1,0 +1,170 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml">
+
+	<ui:define name="title">Contact</ui:define>
+	<ui:define name="pageContent">
+
+
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+
+
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">Documents</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-info"><i class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message"><strong>John Doe</strong> received
+										$1.527,32</span> <span class="time">finances.xls</span>
+								</div>
+						</a></li>
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-success"><i
+										class="icon-file-text"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">My name is <strong>John
+											Doe</strong> ...
+									</span> <span class="time">briefing.docx</span>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">Persons</div>
+					<ul class="notifications">
+						<li><a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span> <span
+										class="time">21 years old</span>
+								</div>
+						</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-search-results -->
+
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li><a href="#{request.contextPath}/agent/dashboard.jsf">
+							<i class="icon-dashboard"></i> Services E-Government
+					</a></li>
+					<li><a href="#{request.contextPath}/agent/Requests.jsf"> <i
+							class="icon-edit"></i> Requests
+					</a></li>
+
+					<li><a href="#{request.contextPath}/agent/DispClaims.jsf"> <i
+							class="icon-table"></i> Display Claims
+					</a></li>
+
+
+					<li><a href="#{request.contextPath}/agent/contact.jsf">
+							<i class="icon-edit"></i> Contact us
+					</a></li>
+
+
+				</ul>
+
+
+				<!-- /Navigation -->
+
+
+
+
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+
+		<div id="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="widget box">
+						<div class="widget-header">
+							<h4>
+								<i class="icon-reorder"></i> Styled Form Components
+							</h4>
+						</div>
+						<div class="widget-content">
+							<h:form class="form-horizontal row-border" action="#">
+								<div class="alert alert-info fade in">
+									<i class="icon-remove close" data-dismiss="alert"></i> This are
+									examples of full width input fields. Please find select-boxes
+									and other things below.
+								</div>
+								<div class="form-group">
+
+									<div class="col-md-10" >
+										<label class="col-md-2 control-label">Reclamation
+											type: </label>
+
+										<h:selectOneRadio value="#{reclamationBean.reclamation.type}" style="margin-left:50px;">
+											<label class="radio"> <f:selectItem
+													itemValue="Technical" itemLabel="Technical" class="uniform" />
+											</label>
+
+											<label class="radio"> <f:selectItem
+													itemValue="Services" itemLabel="Services" class="uniform" /><br />
+											</label>
+										</h:selectOneRadio>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-2 control-label">Subject:</label>
+									<div class="col-md-10">
+										<h:inputText value="#{reclamationBean.reclamation.sujet}"
+											name="regular" class="form-control" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-2 control-label">Text:</label>
+									<div class="col-md-10">
+										<h:inputTextarea value="#{reclamationBean.reclamation.text}"
+											rows="5" name="wysiwyg" class="form-control wysiwyg" />
+
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">Mail address: </label>
+									<div class="col-md-10">
+										<h:inputText value="#{reclamationBean.reclamation.mail}"
+											rows="5" size="30" id="nom" name="mail"
+											class="form-control wysiwyg" required="true" />
+										<h:message id="nomMessage" for="nom" showDetail="message" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-2 control-label"></label>
+									<h:commandButton action="#{reclamationBean.DoAddClaim()}"
+										value="Send" class="btn btn-danger" />
+
+								</div>
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</ui:define>
+</ui:composition>
